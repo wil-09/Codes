@@ -1,5 +1,9 @@
 function Code
-% PSEUDOSPECTRAL METHOD FOR THE ADVECTION-CHEMOTAXIS MODEL IN 2D
+% Pseudo spectral code for solving 2D chemotaxis model with long-range
+% diffusion, uniform advection and traction forces.
+% Authors: Domgno Kuipou William and Belobo Belobo Didier
+% Affiliations: African Centre for Advanced Studies, P.O Box 4477, Yaounde, Cameroon
+% Code written on July 2021
 clear all; close all; clc
 set(0, 'defaultaxesfontsize', 20, 'defaultaxesfontWeight', 'bold', 'defaultaxesLineWidth', 1)
 i = sqrt(-1);
@@ -20,7 +24,7 @@ Nx = 128*2; Ny = 128*2;
 Lx = 50; Ly = 50; nplot = (T - t0)/(4*dt);                   % period 2*pi*L
 % Gridspace and grid vector used in the Fourier method
 x = (2*pi/Nx)*(-Nx/2:Nx/2 -1)*Lx;                            % x coordinate; S11 = length(x); 
-X1 = x(2) - x(1)                                            % measuring the space step
+X1 = x(2) - x(1);                                            % measuring the space step
 kxm = [0:Nx/2-1 0 -Nx/2+1:-1]/Lx;                            % wave vector    1i*[0:Nx/2-1 0 -Nx/2+1:-1]'/Lx;
 y = (2*pi/Ny)*(-Ny/2:Ny/2 -1)*Ly;                            % y coordinate
 ky = [0:Ny/2-1 0 -Ny/2+1:-1]/Ly;                             % wave vector   1i*[0:Ny/2-1 0 -Ny/2+1:-1]'/Ly;
